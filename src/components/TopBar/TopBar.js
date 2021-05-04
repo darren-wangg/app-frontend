@@ -41,6 +41,7 @@ import { levelColors } from '../../utils/colors'
 import { withRouter } from 'react-router'
 import Grow from '@material-ui/core/Grow'
 import SubscribeDialog from '../SubscribeDialog/SubscribeDialog'
+import CollectionPostDialog from '../Collections/CollectionPostDialog'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 import numeral from 'numeral'
 
@@ -414,6 +415,8 @@ function TopBar ({ classes, notifications, history, width, isTourOpen }) {
   const [account, setAccount] = React.useState(null)
   const [isShown, setIsShown] = useState(isTourOpen || false)
 
+  const [collectionDialogOpen, setCollectionDialogOpen] = React.useState(false)
+
   let authInfo = useSelector(getReduxState)
   let { level } = authInfo
 
@@ -421,7 +424,9 @@ function TopBar ({ classes, notifications, history, width, isTourOpen }) {
     const search = window.location.search
     const params = new URLSearchParams(search)
     const dialog = params.get('signupOpen')
+    const collectionDialog = params.get('collectionDialogOpen')
     setDialogOpen(dialog || false)
+    setCollectionDialogOpen(collectionDialog || false)
     setAccount(authInfo.account)
   }, [authInfo])
 
@@ -436,6 +441,8 @@ function TopBar ({ classes, notifications, history, width, isTourOpen }) {
   const handleDialogOpen = () => {
     setDialogOpen(true)
   }
+
+  const handleCollectionDialogClose = () => setCollectionDialogOpen(false)
 
   const handleDialogClose = () => {
     setDialogOpen(false)
@@ -615,6 +622,12 @@ function TopBar ({ classes, notifications, history, width, isTourOpen }) {
             account={account}
             dialogOpen={dialogOpen}
             handleDialogClose={handleDialogClose}
+          />
+          <CollectionPostDialog
+            account={account}
+            dialogOpen={collectionDialogOpen}
+            postid={'routeFromUrl'}
+            handleDialogClose={handleCollectionDialogClose}
           />
         </AppBar>
         <MuiThemeProvider theme={theme}>

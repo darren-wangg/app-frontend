@@ -83,7 +83,8 @@ const CollectionPostDialog = ({ postid, classes, dialogOpen, handleDialogClose }
     try {
       setIsLoading(true)
       const { eosname, signature } = await wallet.scatter.getAuthToken()
-      const params = { name, description, signature, eosname, postId: postid }
+      const postId = postid === 'routeFromUrl' ? undefined : postid
+      const params = { name, description, signature, eosname, postId }
       const { data } = await axios.post(`${BACKEND_API}/collections`, params)
       setNewCollectionInfo(data)
       setIsLoading(false)
