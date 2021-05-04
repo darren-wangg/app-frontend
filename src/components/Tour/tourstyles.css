@@ -1,0 +1,22 @@
+.tourHeader {
+  text-transform: uppercase;
+  margin-top: 0;
+  font-weight: 500;
+}
+.tourLink {
+    color: #00EAB7;
+}
+.tourButton {
+  margin: 10px 10px 0 0 !important;
+  background-color: #00EAB7 !important;
+  color: #fff !important;
+  font-weight: 400;
+}
+.Mask {
+  border: solid #fff;
+  outline: solid #fff;
+}
+.tourResources {
+  text-align: center;
+  margin-bottom: 1em;
+}

@@ -1,0 +1,104 @@
+html {
+  font-size: 100%;
+}
+
+@media (max-width: 960px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+/* Title */
+
+.MuiTypography-h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 3.25rem;
+  margin-bottom: 0.2rem;
+}
+
+/* HEADER 2 */
+
+.MuiTypography-h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+/* HEADER 3 */
+
+.MuiTypography-h3 {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1.75rem;
+  line-height: 2.5rem;
+}
+
+/* HEADER 4 */
+
+.MuiTypography-h4 {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.375rem;
+  line-height: 2rem;
+}
+
+/* HEADER 5 */
+
+.MuiTypography-h5 {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.4rem;
+}
+
+/* HEADER 6 */
+
+.MuiTypography-h6 {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+/* SUBTITLE 1 */
+
+.MuiTypography-subtitle1 {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.625rem;
+  line-height: 1.25rem;
+}
+
+/* SUBTITLE 2 */
+
+.MuiTypography-subtitle2 {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 1.2rem;
+  line-height: 1.1875rem;
+}
+
+/* Body */
+
+.MuiTypography-body1 {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1rem;
+}

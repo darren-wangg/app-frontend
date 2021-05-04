@@ -1,0 +1,66 @@
+import React, { memo } from 'react'
+import YupListPostController from './YupListPostController'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
+
+const styles = theme => ({
+  progress: {
+    padding: theme.spacing(4),
+    color: 'white'
+  },
+  container: {
+    width: 'calc(100vw - 190px)',
+    margin: 'auto',
+    maxWidth: '70%',
+    [theme.breakpoints.down('sm')]: {
+      width: '85%',
+      maxWidth: '85%'
+    },
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: '1%',
+      minWidth: '100vw'
+    },
+    borderTopLeftRadius: '10px',
+    borderTopRightRadius: '10px'
+  }
+})
+
+function YupListFeed ({
+  posts,
+  classes,
+  postType,
+  category,
+  isSearch
+ }) {
+  return (
+    <ErrorBoundary>
+      <div align='center'
+        className={classes.container}
+      >
+        {
+          posts.map((post, i) => {
+            return (
+              <YupListPostController post={post}
+                key={post._id.postid}
+                postType={postType}
+                rank={isSearch ? post.listRank : i + 1}
+                rankCategory={category}
+              />
+            )
+          })
+        }
+      </div>
+    </ErrorBoundary>
+  )
+}
+
+YupListFeed.propTypes = {
+  postType: PropTypes.string.isRequired,
+  posts: PropTypes.array.isRequired,
+  classes: PropTypes.object.isRequired,
+  category: PropTypes.string.isRequired,
+  isSearch: PropTypes.bool.isRequired
+}
+
+export default memo(withStyles(styles)(YupListFeed))

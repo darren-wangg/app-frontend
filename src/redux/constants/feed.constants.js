@@ -1,0 +1,6 @@
+export const feedConstants = {
+  SET_HOME_FEED: 'feed/SET_HOME_FEED',
+  FETCH_FEED: 'feed/FETCH_FEED',
+  FETCH_FEED_SUCCESS: 'feed/FETCH_FEED_SUCCESS',
+  FETCH_FEED_FAILURE: 'feed/FETCH_FEED_FAILURE'
+}

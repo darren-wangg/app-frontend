@@ -1,0 +1,14 @@
+.yup-twitter-tweet {
+  margin-left: 4.2% !important;
+  margin-top: 2.7% !important;
+  margin-bottom: 4.2% !important;
+  width: 600px !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .yup-twitter-tweet {
+    margin-left: 0 !important;
+    margin-top: -2.8% !important;
+    margin-bottom: 0 !important;
+  }
+}
